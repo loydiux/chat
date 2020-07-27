@@ -29,7 +29,7 @@ resource "aws_iam_group" "s3_group" {
 resource "aws_iam_policy_attachment" "test-attach" {
   name       = "test-attachment"
   groups = [aws_iam_group.s3_group.name]
-  policy_arn = "${data.aws_iam_policy.policy.arn}"
+  policy_arn = data.aws_iam_policy.policy.arn
 }
 
 resource "aws_iam_user" "dev" {
